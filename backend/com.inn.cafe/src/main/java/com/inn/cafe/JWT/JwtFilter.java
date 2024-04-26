@@ -35,7 +35,7 @@ public class JwtFilter extends OncePerRequestFilter {
         if(httpServletRequest.getServletPath().matches("/user/login|/user/forgotPassword|/user/signup")) {
             filterChain.doFilter(httpServletRequest, httpServletResponse);
         } else {
-            String authorizationHeader = httpServletRequest.getHeader("Uathorization");
+            String authorizationHeader = httpServletRequest.getHeader("Authorization");
             String token = null;
 
             if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
