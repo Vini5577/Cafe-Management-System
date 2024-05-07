@@ -175,4 +175,9 @@ public class UserServiceImpl implements UserService {
                     allAdmin);
         }
     }
+
+    @Override
+    public ResponseEntity<String> checkToken() {
+        return CafeUtils.getResponseEntity("true", HttpStatus.OK);
+    }
 }
